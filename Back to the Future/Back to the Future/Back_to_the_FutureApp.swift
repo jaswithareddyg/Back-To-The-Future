@@ -11,7 +11,7 @@ import SwiftUI
 struct Back_to_the_FutureApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(githubIssues: GitHubIssues())
         }
     }
 }
