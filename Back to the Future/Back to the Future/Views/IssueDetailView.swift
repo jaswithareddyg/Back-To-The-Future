@@ -11,7 +11,6 @@ struct IssueDetailView: View {
     let issue: GitHubIssue
     
     var body: some View {
-        var x = print("Image: \(issue.user)")
         ScrollView {
             VStack(alignment: .leading) {
                 HStack {
@@ -28,12 +27,13 @@ struct IssueDetailView: View {
                 }
                 
                 HStack(alignment: .center) {
-                    AsyncImage(url: URL(string: issue.user.avatar_url ?? "No value")) { image in
+                    AsyncImage(url: URL(string: issue.user.avatarUrl ?? "No value")) { image in
                         image.resizable()
                             .aspectRatio(contentMode: .fill)
                             .frame(width: /*@START_MENU_TOKEN@*/70.0/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/70.0/*@END_MENU_TOKEN@*/)
                             .clipShape(Circle())
-                            .overlay(Circle().stroke(Color.black, lineWidth: 2))
+                            .overlay(Circle().stroke(Color.black, lineWidth: 2)
+                                .shadow(radius: 2))
                     } placeholder: {
                         Image(systemName: "person.fill")
                             .resizable()
@@ -67,5 +67,11 @@ struct IssueDetailView: View {
             }
             .padding()
         }
+    }
+}
+
+struct Previews_IssueDetailView_Previews: PreviewProvider {
+    static var previews: some View {
+        IssueDetailView(issue: GitHubIssue(title: "Hello", id: 2434234, createdAt: "2023-01-15T12:15:30Z", body: "Hello, this is the description.   Lorem ipsum.", state: "open", user: GitHubUser(login: "hello_hi", avatarUrl: "")))
     }
 }

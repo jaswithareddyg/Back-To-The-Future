@@ -31,3 +31,10 @@ struct IssueTabView: View {
         }
     }
 }
+
+struct Previews_IssueTabView_Previews: PreviewProvider {
+    static var previews: some View {
+        IssueTabView(state: "open", issue: GitHubIssue(title: "Hello. This is an open issue.", id: 2434234, createdAt: "2023-01-15T12:15:30Z", body: "Hello, this is the description.   Lorem ipsum.", state: "open", user: GitHubUser(login: "hello_hi", avatarUrl: "")))
+        IssueTabView(state: "closed", issue: GitHubIssue(title: "Hello. This is a closed issue.", id: 2434252, createdAt: "2022-10-10T02:51:45Z", body: "Hello, this is the description.   Lorem ipsum.", state: "closed", user: GitHubUser(login: "hello_hi", avatarUrl: "")))
+    }
+}

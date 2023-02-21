@@ -53,7 +53,7 @@ struct ContentView: View {
                 Text("Closed Issues")
             }
         }
-        .accentColor(.red)
+        .accentColor(Color.orange)
     }
 }
 

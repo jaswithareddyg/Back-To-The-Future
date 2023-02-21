@@ -12,7 +12,7 @@ class GitHubIssues: ObservableObject, Identifiable {
     @Published var closedIssues: [GitHubIssue] = []
     
     init() {
-        let url = URL(string: "https://api.github.com/repos/AUTOMATIC1111/stable-diffusion-webui/issues?state=all")!
+        let url = URL(string: "https://api.github.com/repos/bevyengine/bevy/issues?state=all")!
         
         let task = URLSession.shared.dataTask(with: url) {
             data, _, error in guard let data = data, error == nil else {
