@@ -7,7 +7,7 @@
 
 import Foundation
 
-class GitHubIssues: ObservableObject {
+class GitHubIssues: ObservableObject, Identifiable {
     @Published var openIssues: [GitHubIssue] = []
     @Published var closedIssues: [GitHubIssue] = []
     

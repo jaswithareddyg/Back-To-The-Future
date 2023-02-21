@@ -9,35 +9,51 @@ import SwiftUI
 
 struct ContentView: View {
     @ObservedObject var githubIssues = GitHubIssues()
+    /*
+     var body: some View {
+     TabView {
+     Text("Open Issues")
+     .tabItem {
+     Image(systemName: "questionmark.circle")
+     Text("Open Issues")
+     }
+     Text("Closed Issues")
+     .tabItem {
+     Image(systemName: "questionmark.circle.fill")
+     Text("Closed Issues")
+     }
+     }
+     .accentColor(.red)*/
     
     var body: some View {
         TabView {
-            Text("Open Issues")
-                .tabItem {
-                    Image(systemName: "questionmark.circle")
-                    Text("Open Issues")
+            NavigationView {
+                List(githubIssues.openIssues) { issue in
+                    NavigationLink(destination: IssueDetailView(issue: issue)) {
+                        IssueTabView(state: "open", issue: issue)
+                    }
                 }
-            Text("Closed Issues")
-                .tabItem {
-                    Image(systemName: "questionmark.circle.fill")
-                    Text("Closed Issues")
+                .navigationBarTitle("Open Issues")
+            }
+            .tabItem {
+                Image(systemName: "exclamationmark.triangle.fill")
+                Text("Open Issues")
+            }
+            
+            NavigationView {
+                List(githubIssues.closedIssues) { issue in
+                    NavigationLink(destination: IssueDetailView(issue: issue)) {
+                        IssueTabView(state: "closed", issue: issue)
+                    }
                 }
+                .navigationBarTitle("Closed Issues")
+            }
+            .tabItem {
+                Image(systemName: "checkmark.circle.fill")
+                Text("Closed Issues")
+            }
         }
         .accentColor(.red)
-    
-    /*var body: some View {
-        TabView {
-            IssueTabView(state: "open", issues: githubIssues.openIssues)
-                .tabItem {
-                    Image(systemName: "questionmark.circle")
-                    Text("Open Issues")
-                }
-            IssueTabView(state: "closed", issues: githubIssues.closedIssues)
-                .tabItem {
-                    Image(systemName: "questionmark.circle.fill")
-                    Text("Closed Issues")
-                }
-        }*/
     }
 }
 

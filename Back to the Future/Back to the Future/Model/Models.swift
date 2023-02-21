@@ -9,7 +9,7 @@ import Foundation
 
 struct GitHubUser: Codable {
     let login: String
-    let avatarURL: String?
+    let avatar_url: String?
 }
 
 struct GitHubIssue: Codable, Identifiable {
