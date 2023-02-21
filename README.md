@@ -7,6 +7,4 @@
 
 # Attributions
 
-
-
-# Notes
+https://www.appcoda.com/launch-screen-swiftui/
