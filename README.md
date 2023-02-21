@@ -2,7 +2,7 @@
 
 - Name: Jaswitha Reddy Guntaka
 - UChicago Email: jaswithareddy@uchicago.edu
-- Github Id: jasuchicago
+- Github ID: jasuchicago
 - Slack User Name: Jaswitha Reddy Guntaka
 
 # Attributions
