@@ -9,22 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @ObservedObject var githubIssues = GitHubIssues()
-    /*
-     var body: some View {
-     TabView {
-     Text("Open Issues")
-     .tabItem {
-     Image(systemName: "questionmark.circle")
-     Text("Open Issues")
-     }
-     Text("Closed Issues")
-     .tabItem {
-     Image(systemName: "questionmark.circle.fill")
-     Text("Closed Issues")
-     }
-     }
-     .accentColor(.red)*/
-    
+   
     var body: some View {
         TabView {
             NavigationView {
@@ -34,6 +19,9 @@ struct ContentView: View {
                     }
                 }
                 .navigationBarTitle("Open Issues")
+                .toolbarColorScheme(.dark, for: .navigationBar)
+                .toolbarBackground(Color.orange, for: .navigationBar)
+                .toolbarBackground(.visible, for: .navigationBar)
             }
             .tabItem {
                 Image(systemName: "exclamationmark.triangle.fill")
@@ -47,6 +35,9 @@ struct ContentView: View {
                     }
                 }
                 .navigationBarTitle("Closed Issues")
+                .toolbarColorScheme(.dark, for: .navigationBar)
+                .toolbarBackground(Color.orange, for: .navigationBar)
+                .toolbarBackground(.visible, for: .navigationBar)
             }
             .tabItem {
                 Image(systemName: "checkmark.circle.fill")
