@@ -7,4 +7,7 @@
 
 # Attributions
 
-https://www.appcoda.com/launch-screen-swiftui/
+Launch Screen: <br>
+https://www.appcoda.com/launch-screen-swiftui/ <br>
+Navigation Bar Color: <br>
+https://sarunw.com/posts/swiftui-navigation-bar-color/
